@@ -12,8 +12,8 @@ const Pages = () => {
 
   return (
     <div 
-      className={`container container--${color}`} 
-      onClick={e => setColor(getRandomColorRGB())}
+      className="container"
+      onClick={() => setColor(getRandomColorRGB())}
       style={ { backgroundColor: color || 'white'}}>
       <h1 className="title">dadtini's</h1>
       <p>dads can drink too</p>
