@@ -15,7 +15,7 @@ const randomDrink = (currentDrink) => {
 const DadtiniGenerator = () => {
   const [drink, setDrink] = useState(null);
 
-  const buttonText = drink ? 'Another dadtini' : `What's a dadtini?`;
+  const buttonText = drink ? 'Another dadtini?' : `What's a dadtini?`;
   return (
     <div className="dadtini-generator">
       <button 
