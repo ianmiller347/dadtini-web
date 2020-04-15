@@ -15,7 +15,7 @@ export const dadDrinks = [
     description: 'Just a dad relaxing on the beach.',
   },
   {
-    name: 'Cupa Libre',
+    name: 'Cuba Libre',
     image: '',
     description: 'Rum and Coke with lime juice? "Yes" -- dads',
   },
