@@ -26,7 +26,8 @@ $color-button: #1515fa;
 .dadtini-display {
   width: 100%;
   max-width: 1024px;
-  height: 100%;
+  height: calc(100%-6rem);
+  padding: 3rem 0;
   margin: 0 auto;
   position: relative;
   display: flex;
@@ -42,29 +43,37 @@ $color-button: #1515fa;
     overflow: hidden;
     margin: 0 auto;
     z-index: 0;
+
+    @media all and (min-width: 1024px) {
+      max-height: 60vh;
+    }
   }
 
   &__image {
     max-width: 100%;
 
     &-set-credit {
-      opacity: .1;
-      animation-name: fadeInSlow;
+      opacity: .2;
+      animation-name: fadeIn;
       animation-duration: 5s;
-      position: absolute;
-      bottom: 1rem;
-      border: none;
       border-radius: .5rem;
       box-shadow: 0 0 6px #666;
+
+      @media all and (min-width: 1024px) {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+      }
     }
 
     &-credit {
       background-color: rgba(6,6,6,.6);
       color: white;
       position: absolute;
-      bottom: 4rem;
+      bottom: 2rem;
       opacity: .3;
     }
+
   }
 
   &__description {
@@ -76,7 +85,7 @@ $color-button: #1515fa;
   }
 }
 
-@keyframes fadeInSlow {
+@keyframes fadeIn {
   from {
     opacty: 0;
   }
