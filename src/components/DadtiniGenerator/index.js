@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { dadDrinks } from './dadtini-data';
+import { dadDrinks } from '../../data/dadtini-data';
 import { randomInt } from '../../utils/helpers';
 import DadtiniDisplay from './DadtiniDisplay';
 import './style.scss';

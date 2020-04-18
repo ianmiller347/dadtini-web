@@ -15,7 +15,7 @@ export const dadDrinks = [
     name: 'Bushwacker',
     image: 'https://www.babyboomster.com/wp-content/uploads/2019/03/Alabama-bushwacker.jpg',
     imageTitle: '',
-    description: 'Just a dad relaxing on the beach.',
+    description: 'Just a dad relaxing on the beach. 🌴 ',
   },
   {
     name: 'Cuba Libre',
@@ -25,8 +25,8 @@ export const dadDrinks = [
   },
   {
     name: 'Daquiri',
-    image: '',
-    imageTitle: '',
+    image: 'https://i.ibb.co/qCY9rcP/Annotation-2020-04-18-175133.png',
+    imageTitle: 'Tim Nusog',
     description: 'Dads who read Hemingway and like to play it cool.',
   },
   {
