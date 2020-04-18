@@ -2,7 +2,9 @@ $color-shadow: #222;
 $color-button: #1515fa;
 
 .dadtini-generator {
+  flex-grow: 1;
   text-align: center;
+  padding: 0;
 
   &__button {
     cursor: pointer;
@@ -10,6 +12,7 @@ $color-button: #1515fa;
     border: none;
     border-radius: 9px;
     padding: .5rem 1.5rem;
+    margin-bottom: 1rem;
     color: white;
     box-shadow: 0 0 7px $color-shadow;
     background-color: $color-button;
@@ -23,15 +26,62 @@ $color-button: #1515fa;
 .dadtini-display {
   width: 100%;
   max-width: 1024px;
+  height: 100%;
   margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &__image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 250px;
+    max-width: 1024px;
+    overflow: hidden;
     margin: 0 auto;
+    z-index: 0;
   }
 
   &__image {
     max-width: 100%;
+
+    &-set-credit {
+      opacity: .1;
+      animation-name: fadeInSlow;
+      animation-duration: 5s;
+      position: absolute;
+      bottom: 1rem;
+      border: none;
+      border-radius: .5rem;
+      box-shadow: 0 0 6px #666;
+    }
+
+    &-credit {
+      background-color: rgba(6,6,6,.6);
+      color: white;
+      position: absolute;
+      bottom: 4rem;
+      opacity: .3;
+    }
+  }
+
+  &__description {
+    background-color: rgba(200,200,200,.8);
+    z-index: 10;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 6px #666;
+  }
+}
+
+@keyframes fadeInSlow {
+  from {
+    opacty: 0;
+  }
+
+  to {
+    opacity: .9;
   }
 }
