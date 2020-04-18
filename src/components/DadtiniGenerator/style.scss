@@ -26,7 +26,6 @@ $color-button: #1515fa;
 .dadtini-display {
   width: 100%;
   max-width: 1024px;
-  height: calc(100%-6rem);
   padding: 3rem 0;
   margin: 0 auto;
   position: relative;
@@ -45,10 +44,7 @@ $color-button: #1515fa;
     overflow: hidden;
     margin: 0 auto;
     z-index: 0;
-
-    @media all and (min-width: 1024px) {
-      max-height: 60vh;
-    }
+    max-height: 70vh;
   }
 
   &__image {
@@ -60,12 +56,9 @@ $color-button: #1515fa;
       animation-duration: 5s;
       border-radius: .5rem;
       box-shadow: 0 0 6px #666;
-
-      @media all and (min-width: 1024px) {
-        position: absolute;
-        bottom: 1rem;
-        right: 1rem;
-      }
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
     }
 
     &-credit {
