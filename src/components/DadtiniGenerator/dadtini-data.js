@@ -7,13 +7,13 @@ export const dadDrinks = [
   },
   {
     name: 'Old Fashioned',
-    image: '',
+    image: 'https://i.ibb.co/3WMQgXM/Old-fashioned.jpg',
     imageTitle: '',
     description: `A dad's favorite drink by far.`,
   },
   {
     name: 'Bushwacker',
-    image: '',
+    image: 'https://www.babyboomster.com/wp-content/uploads/2019/03/Alabama-bushwacker.jpg',
     imageTitle: '',
     description: 'Just a dad relaxing on the beach.',
   },
