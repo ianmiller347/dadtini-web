@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const DadtiniDisplay = ({ drink }) => {
   const [creditVisible, setCreditVisible] = useState(false);
+  // prevent credit from stickin around after drink is changed
+  useEffect(() => {
+    setCreditVisible(false);
+  }, [drink.name]);
 
   return (
     <div className="dadtini-display">

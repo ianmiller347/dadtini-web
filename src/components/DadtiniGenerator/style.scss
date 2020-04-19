@@ -62,7 +62,7 @@ $color-button: #1515fa;
     &-set-credit {
       opacity: .2;
       animation-name: fadeIn;
-      animation-duration: 5s;
+      animation-duration: 6s;
       border-radius: .5rem;
       box-shadow: 0 0 6px #666;
       position: absolute;
@@ -76,6 +76,7 @@ $color-button: #1515fa;
       position: absolute;
       top: 4rem;
       opacity: 0;
+      transition: all .75s;
 
       &--visible {
         opacity: .4;

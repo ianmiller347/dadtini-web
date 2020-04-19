@@ -9,7 +9,7 @@ export const dadDrinks = [
     name: 'Old Fashioned',
     image: 'https://i.ibb.co/3WMQgXM/Old-fashioned.jpg',
     imageTitle: '',
-    description: `A dad's favorite drink by far.`,
+    description: `🥃 A dad's favorite drink by far.`,
   },
   {
     name: 'Bushwacker',
@@ -33,12 +33,18 @@ export const dadDrinks = [
     name: 'Mount Gay & Tonic',
     image: 'https://i.ibb.co/d6bfCJZ/mgt.png',
     imageTitle: '',
-    description: 'Dads who own a sailboat all drink this dadtini classic.',
+    description: '⛵ Dads who own a sailboat all drink this dadtini classic.',
   },
   {
     name: 'Martini',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/9/92/Vodka_Martini%2C_Macaroni_Grill%2C_Dunwoody_GA.jpg',
-    imageTitle: 'John Phelan / CC BY-SA (https://creativecommons.org/licenses/by-sa/3.0)',
+    image: 'https://i.ibb.co/tzkfCtY/martini-edited.png',
+    imageTitle: 'original photo: John Phelan / CC BY-SA (https://creativecommons.org/licenses/by-sa/3.0)',
     description: 'Shaken. Not stirred.🍸 Dads who have watched James Bond before probably.',
+  },
+  {
+    name: 'Sazerac',
+    image: 'https://i.ibb.co/2shhCZ5/sazerac.jpg',
+    imageTitle: '',
+    description: 'Both dads and grand dads alike will tip their hats to this wonderful dadtini.',
   },
 ];
