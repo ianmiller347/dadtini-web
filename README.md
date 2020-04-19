@@ -5,7 +5,9 @@ a website for dad-approved cocktails
 
 ## data
 contribute data by making a pull request to src/data/dadtini-data.js
-fill it out
+
+
+fill it out, make a PR:
 ```
 {
   name: 'Cocktail Name',

@@ -13,6 +13,7 @@ body, html {
   align-items: stretch;
   justify-content: center;
   text-align: center;
+  touch-action: manipulation;
 
   .title {
     font-size: 5rem;

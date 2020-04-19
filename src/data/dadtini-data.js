@@ -13,7 +13,7 @@ export const dadDrinks = [
   },
   {
     name: 'Bushwacker',
-    image: 'https://www.babyboomster.com/wp-content/uploads/2019/03/Alabama-bushwacker.jpg',
+    image: 'https://i.ibb.co/NxxP5z9/bushwacker.png',
     imageTitle: '',
     description: 'Just a dad relaxing on the beach. 🌴 ',
   },
@@ -31,7 +31,7 @@ export const dadDrinks = [
   },
   {
     name: 'Mount Gay & Tonic',
-    image: '',
+    image: 'https://i.ibb.co/d6bfCJZ/mgt.png',
     imageTitle: '',
     description: 'Dads who own a sailboat all drink this dadtini classic.',
   },
