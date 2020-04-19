@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactGA from 'react-ga';
 import { dadDrinks } from '../../data/dadtini-data';
 import { randomInt } from '../../utils/helpers';
 import DadtiniDisplay from './DadtiniDisplay';
@@ -12,6 +13,16 @@ const randomDrink = (currentDrink) => {
   return otherDrinks[randomInt(max)];
 }
 
+const handleGenerate = (setDrink, drink) => {
+  const newDrink = randomDrink(drink);
+  setDrink(newDrink);
+  ReactGA.event({
+    category: 'generate-drink',
+    action: 'clicked',
+    label: `Generated ${newDrink.name}`,
+  });
+}
+
 const DadtiniGenerator = () => {
   const [drink, setDrink] = useState(null);
 
@@ -20,7 +31,7 @@ const DadtiniGenerator = () => {
     <div className="dadtini-generator">
       <button 
         className="dadtini-generator__button" 
-        onClick={() => setDrink(randomDrink(drink))}
+        onClick={() => handleGenerate(setDrink, drink)}
         title="Find a dadtini"
       >
         {buttonText}

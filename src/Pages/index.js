@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import ReactGA from 'react-ga';
 import { randomInt } from '../utils/helpers';
 import DadtiniGenerator from '../components/DadtiniGenerator';
 import './style.scss';
@@ -9,6 +10,11 @@ const getRandomColorRGB = () => {
 
 const Pages = () => {
   const [color, setColor] = useState();
+  useEffect(() => {
+    ReactGA.initialize('UA-163959709-1');
+    const { pathname, search } = window.location;
+    ReactGA.pageview(`${pathname}${search}`);
+  }, []);
 
   return (
     <div 
