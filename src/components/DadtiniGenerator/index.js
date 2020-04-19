@@ -8,7 +8,7 @@ const randomDrink = (currentDrink) => {
   const otherDrinks = currentDrink 
     ? dadDrinks.filter(dadDrink => dadDrink.name !== currentDrink.name)
     : dadDrinks;
-  const max = otherDrinks.length - 1;
+  const max = otherDrinks.length;
   return otherDrinks[randomInt(max)];
 }
 
