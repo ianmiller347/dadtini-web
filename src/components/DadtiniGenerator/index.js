@@ -21,6 +21,7 @@ const DadtiniGenerator = () => {
       <button 
         className="dadtini-generator__button" 
         onClick={() => setDrink(randomDrink(drink))}
+        title="Find a dadtini"
       >
         {buttonText}
       </button>

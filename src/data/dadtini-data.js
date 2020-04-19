@@ -19,7 +19,7 @@ export const dadDrinks = [
   },
   {
     name: 'Cuba Libre',
-    image: '',
+    image: 'https://i.ibb.co/DwTjVZf/cuba-libre.png',
     imageTitle: '',
     description: 'Rum and Coke with lime juice? "Yes" -- dads',
   },
@@ -37,8 +37,8 @@ export const dadDrinks = [
   },
   {
     name: 'Martini',
-    image: '',
-    imageTitle: '',
-    description: 'Shaken. Not stirred. Dads who have watched James Bond before probably.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/9/92/Vodka_Martini%2C_Macaroni_Grill%2C_Dunwoody_GA.jpg',
+    imageTitle: 'John Phelan / CC BY-SA (https://creativecommons.org/licenses/by-sa/3.0)',
+    description: 'Shaken. Not stirred.🍸 Dads who have watched James Bond before probably.',
   },
 ];

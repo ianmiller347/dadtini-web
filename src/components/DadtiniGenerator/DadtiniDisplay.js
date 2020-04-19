@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const DadtiniDisplay = ({ drink }) => {
-  const [credit, setCredit] = useState('');
+  const [creditVisible, setCreditVisible] = useState(false);
 
   return (
     <div className="dadtini-display">
@@ -10,11 +10,11 @@ const DadtiniDisplay = ({ drink }) => {
         {drink.image && 
           <img className="dadtini-display__image" src={drink.image} alt={drink.name} title={`Author: ${drink.imageTitle}`} />
         }
-        {credit &&
-          <div className="dadtini-display__image-credit">{credit}</div>
-        }
         {drink.imageTitle &&
-          <button className="dadtini-display__image-set-credit" onClick={() => setCredit(drink.imageTitle)}>Image credit</button>
+          <>
+            <div className={`dadtini-display__image-credit ${creditVisible && 'dadtini-display__image-credit--visible'}`}>{drink.imageTitle}</div>
+            <button className="dadtini-display__image-set-credit" onClick={() => setCreditVisible(!creditVisible)}>Image credit</button>
+          </>
         }
       </div>
       <div className="dadtini-display__description">

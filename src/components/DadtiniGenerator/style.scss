@@ -5,6 +5,9 @@ $color-button: #1515fa;
   flex-grow: 1;
   text-align: center;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &__button {
     cursor: pointer;
@@ -30,10 +33,12 @@ $color-button: #1515fa;
   margin: 0 auto;
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   animation-name: fadeIn;
   animation-duration: .5s;
+  overflow: hidden;
+  flex-grow: 1;
 
   &__image-container {
     position: absolute;
@@ -49,6 +54,10 @@ $color-button: #1515fa;
 
   &__image {
     max-width: 100%;
+    animation-name: fadeIn;
+    opacity: 0;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 
     &-set-credit {
       opacity: .2;
@@ -57,16 +66,20 @@ $color-button: #1515fa;
       border-radius: .5rem;
       box-shadow: 0 0 6px #666;
       position: absolute;
-      bottom: 1rem;
-      right: 1rem;
+      top: 2rem;
+      right: 2rem;
     }
 
     &-credit {
       background-color: rgba(6,6,6,.6);
       color: white;
       position: absolute;
-      bottom: 2rem;
-      opacity: .3;
+      top: 4rem;
+      opacity: 0;
+
+      &--visible {
+        opacity: .4;
+      }
     }
 
   }
@@ -79,6 +92,7 @@ $color-button: #1515fa;
     padding: 2rem;
     border-radius: 2rem;
     box-shadow: 0 0 6px #666;
+    max-width: 70%;
   }
 }
 
