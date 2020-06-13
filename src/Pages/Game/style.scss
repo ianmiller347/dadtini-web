@@ -1,0 +1,19 @@
+.tic-tac-toe-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.board-cell {
+  border: 1px solid #555;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+
+.winner {
+  padding: 2rem 1rem;
+  font-size: 2rem;
+}
