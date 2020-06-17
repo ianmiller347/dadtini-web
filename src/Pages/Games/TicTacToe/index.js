@@ -27,39 +27,20 @@ const SINGLE = 'SINGLEPLAYER';
 const API_HOST = `http://${window.location.hostname}`;
 const GAMES = `${API_HOST}/games/tic-tac-toe`;
 
+// the singleplayer client
 const TicTacToeClient = Client({
   game: TicTacToe,
   numPlayers: 2,
   board: TicTacToeBoard,
   debug: false,
-  multiplayer: SocketIO({ server: API_HOST }),
+  // multiplayer: SocketIO({ server: API_HOST }),
 });
 
 export const TicTacToeGame = () => {
-  // const [playerId, setPlayerId] = useState(null);
+  const [playerId, setPlayerId] = useState(null);
   // const [gameIsJoined, joinGame] = useState(false);
-  // const [gameId, setGameId] = useState('');
+  const [gameId, setGameId] = useState('default');
   const [playerMode, setPlayerMode] = useState(null);
-
-  // if (playerId === null) {
-  //   return (
-  //     <div>
-  //       <h3>Choose your character</h3>
-  //       <div className="player-choices">
-  //         {Object.keys(contenders).map(key => (
-  //           <button
-  //             key={`${key}_contender`}
-  //             value={key}
-  //             onClick={() => setPlayerId(key)}
-  //           >
-  //             {contenders[key].title}
-  //             {contenders[key].display}
-  //           </button>
-  //         ))}
-  //       </div>
-  //     </div>
-  //   );
-  // }
 
   if (!playerMode) {
     return (
@@ -85,9 +66,29 @@ export const TicTacToeGame = () => {
     );
   }
 
+  if (playerId === null) {
+    return (
+      <div>
+        <h3>Choose your character</h3>
+        <div className="player-choices">
+          {Object.keys(contenders).map(key => (
+            <button
+              key={`${key}_contender`}
+              value={key}
+              onClick={() => setPlayerId(key)}
+            >
+              {contenders[key].title}
+              {contenders[key].display}
+            </button>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div>
-      <TicTacToeClient gameID={gameId} playerID={`${playerId}`} />
+      <TicTacToeClient playerID={`${playerId}`} />
     </div>
   );
 }
