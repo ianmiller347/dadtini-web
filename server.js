@@ -15,7 +15,7 @@ const router = new Router();
 const server = Server({ 
   games: [TicTacToe],
   db: new FlatFile({
-    dir: '/storage/directory',
+    dir: 'storage',
     logging: false,
   }),
 });
