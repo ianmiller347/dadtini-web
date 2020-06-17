@@ -28,7 +28,7 @@ const server = Server({
   
 // }
 
-const frontEndAppBuildPath = path.resolve(__dirname, './build');
+const frontEndAppBuildPath = path.resolve(__dirname, '../build');
 server.app
   .use(serve(frontEndAppBuildPath))
   // .use(router.routes());
