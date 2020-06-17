@@ -3,7 +3,7 @@ import path from 'path';
 import Koa from 'koa';
 import serve from 'koa-static';
 import Router from 'koa-router';
-import { TicTacToe } from './Pages/Games/TicTacToe/TicTacToe';
+import { TicTacToe } from './src/Pages/Games/TicTacToe/TicTacToe';
 
 const PORT = process.env.PORT || 8000;
 // const lobbyConfig = {
@@ -28,7 +28,7 @@ const server = Server({
   
 // }
 
-const frontEndAppBuildPath = path.resolve(__dirname, '../build');
+const frontEndAppBuildPath = path.resolve(__dirname, './build');
 server.app
   .use(serve(frontEndAppBuildPath))
   // .use(router.routes());
