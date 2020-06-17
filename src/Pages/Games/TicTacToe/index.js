@@ -20,6 +20,9 @@ export const contenders = {
   },
 };
 
+const MULTI = 'MULTIPLAYER';
+const SINGLE = 'SINGLEPLAYER';
+
 // const API_HOST = `http://${window.location.hostname}:8000`;
 const API_HOST = `http://${window.location.hostname}`;
 const GAMES = `${API_HOST}/games/tic-tac-toe`;
@@ -36,6 +39,7 @@ export const TicTacToeGame = () => {
   // const [playerId, setPlayerId] = useState(null);
   // const [gameIsJoined, joinGame] = useState(false);
   // const [gameId, setGameId] = useState('');
+  const [playerMode, setPlayerMode] = useState(null);
 
   // if (playerId === null) {
   //   return (
@@ -57,7 +61,20 @@ export const TicTacToeGame = () => {
   //   );
   // }
 
-  // if (!gameIsJoined) {
+  if (!playerMode) {
+    return (
+      <div>
+        <button onClick={() => setPlayerMode(SINGLE)}>
+          Play against CPU
+        </button>
+        <button onClick={() => setPlayerMode(MULTI)}>
+          Play against F r i e n d
+        </button>
+      </div>
+    );
+  }
+
+  if (playerMode === MULTI) {
     return (
       <div className="game-starter-holdster">
         <Lobby 
@@ -66,13 +83,13 @@ export const TicTacToeGame = () => {
           gameComponents={[{ game: TicTacToe, board: TicTacToeBoard }]} />
       </div>
     );
-  // }
+  }
 
-  // return (
-  //   <div>
-  //     <TicTacToeClient gameID={gameId} playerID={`${playerId}`} />
-  //   </div>
-  // );
+  return (
+    <div>
+      <TicTacToeClient gameID={gameId} playerID={`${playerId}`} />
+    </div>
+  );
 }
 
 export default TicTacToeGame;
