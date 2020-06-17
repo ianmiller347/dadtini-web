@@ -1,4 +1,5 @@
 import { INVALID_MOVE } from 'boardgame.io/core';
+import { arrayOfN } from '../../../utils/helpers';
 
 const isVictory = (cells) => {
   const positions = [
@@ -15,11 +16,17 @@ const isVictory = (cells) => {
 }
 
 // Return true if all `cells` are occupied.
-const isDraw = (cells) => {
-  return cells.filter(c => c === null).length === 0;
-}
+const isDraw = (cells) => cells.filter(c => !c).length === 0;
 
 export const TicTacToe = {
+  name: 'tic-tac-toe',
+  minPlayers: 1,
+  maxPlayers: 2,
+  ai: {
+    enumerate: (G, ctx) => arrayOfN(9)
+      .filter(i => !G.cells[i])
+      .map(i => ({ move: 'clickCell', args: [i] })),
+  },
   endIf: (G, ctx) => {
     if (isVictory(G.cells)) {
       return { winner: ctx.currentPlayer };

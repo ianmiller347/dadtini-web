@@ -1,21 +1,7 @@
 import React from 'react';
-import { arrayOfN } from '../../utils/helpers';
-import AirMonarch from '../../svg/shoe/AirMonarch';
-import NewBalance608 from '../../svg/shoe/NewBalance608';
-import './style.scss';
-
-const contenders = {
-  "0": {
-    value: 'o',
-    display: <NewBalance608 />,
-    title: 'New Balance 608',
-  },
-  "1": {
-    value: 'x',
-    display: <AirMonarch />,
-    title: 'Nike Air Monarch',
-  },
-};
+import PropTypes from 'prop-types';
+import { arrayOfN } from '../../../utils/helpers';
+import { contenders } from './';
 
 const XorO = (num) => {
   if (!num) {
@@ -36,7 +22,17 @@ const Cell = ({ row, col, onClick, G }) => {
   );
 };
 
-export const TicTacToeBoard = ({ G, ctx, moves }) => {
+const clickCell = (id, cb, isActive, G) => {
+  if (!isActive) {
+    return false;
+  }
+  if (G.cells[id] !== null) {
+    return false;
+  }
+  cb(id);
+}
+
+export const TicTacToeBoard = ({ G, ctx, moves, isActive }) => {
   let winner = '';
   if (ctx.gameover) {
     winner =
@@ -49,15 +45,22 @@ export const TicTacToeBoard = ({ G, ctx, moves }) => {
 
   return (
     <div className="tic-tac-toe-container">
+      {!ctx.gameover && (
+        <div className="tic-tac-toe-status">
+          It's your turn, {contenders[ctx.currentPlayer].title}
+        </div>
+      )}
+      {ctx.gameover && <button onClick={() => ctx.setup()}>Reset</button>}
       <table className="tic-tac-toe-table">
         <tbody>
           {arrayOfN(3).map(i => (
             <tr key={i}>
               {arrayOfN(3).map(j => (
                 <Cell 
+                  key={`${i}_${j}`}
                   row={i}
                   col={j}
-                  onClick={moves.clickCell}
+                  onClick={id => clickCell(id, moves.clickCell, isActive, G)}
                   G={G}
                 />
               ))}
@@ -69,5 +72,14 @@ export const TicTacToeBoard = ({ G, ctx, moves }) => {
     </div>
   );
 }
+
+TicTacToeBoard.propTypes = {
+  G: PropTypes.any.isRequired,
+  ctx: PropTypes.any.isRequired,
+  moves: PropTypes.any.isRequired,
+  playerID: PropTypes.string,
+  isActive: PropTypes.bool,
+  isMultiplayer: PropTypes.bool,
+};
 
 export default TicTacToeBoard;
