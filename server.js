@@ -5,7 +5,7 @@ import serve from 'koa-static';
 import Router from 'koa-router';
 import { TicTacToe } from './src/Pages/Games/TicTacToe/TicTacToe';
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8080;
 // const lobbyConfig = {
 //   apiPort: PORT,
 //   apiCallback: () => true,
