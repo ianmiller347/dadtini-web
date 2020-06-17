@@ -28,7 +28,7 @@ const TicTacToeClient = Client({
   game: TicTacToe,
   numPlayers: 2,
   board: TicTacToeBoard,
-  debug: true,
+  debug: false,
   multiplayer: SocketIO({ server: API_HOST }),
 });
 

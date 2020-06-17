@@ -12,10 +12,10 @@ export const Games = () => {
     <div className="page page--games">
       <h1>Games for dads</h1>
       <ul className="games-list">
-        <li><Link to="/games/tic-tac-toe">Tic Tac Toe</Link></li>
+        <li><Link to="/game/tic-tac-toe">Tic Tac Toe</Link></li>
       </ul>
       <Switch>
-        <Route exact path="/games/tic-tac-toe">
+        <Route exact path="/game/tic-tac-toe">
           <TicTacToeGame />
         </Route>
       </Switch>

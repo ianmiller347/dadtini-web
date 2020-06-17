@@ -32,11 +32,11 @@ const Pages = () => {
         <nav className="nav">
           <ul>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/games">Games</Link></li>
+            <li><Link to="/game">Games</Link></li>
           </ul>
         </nav>
         <Switch>
-          <Route path="/games">
+          <Route path="/game">
             <Games />
           </Route>
           <Route path="/">
