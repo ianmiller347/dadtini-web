@@ -32,7 +32,7 @@ const clickCell = (id, cb, isActive, G) => {
   cb(id);
 }
 
-export const TicTacToeBoard = ({ G, ctx, moves, isActive }) => {
+export const TicTacToeBoard = ({ G, ctx, moves, isActive, reset }) => {
   let winner = '';
   if (ctx.gameover) {
     winner =
@@ -50,17 +50,17 @@ export const TicTacToeBoard = ({ G, ctx, moves, isActive }) => {
           It's your turn, {contenders[ctx.currentPlayer].title}
         </div>
       )}
-      {ctx.gameover && <button onClick={() => ctx.setup()}>Reset</button>}
+      {ctx.gameover && <button onClick={() => reset()}>Reset</button>}
       <table className="tic-tac-toe-table">
         <tbody>
-          {arrayOfN(3).map(i => (
+          {arrayOfN(3).map((i) => (
             <tr key={i}>
-              {arrayOfN(3).map(j => (
-                <Cell 
-                  key={`${i}_${j}`}
+              {arrayOfN(3).map((j) => (
+                <Cell
+                  key={`cell_${i}_${j}`}
                   row={i}
                   col={j}
-                  onClick={id => clickCell(id, moves.clickCell, isActive, G)}
+                  onClick={(id) => clickCell(id, moves.clickCell, isActive, G)}
                   G={G}
                 />
               ))}

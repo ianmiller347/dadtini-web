@@ -1,5 +1,5 @@
-import { INVALID_MOVE } from 'boardgame.io/core';
-import { arrayOfN } from '../../../utils/helpers';
+import { INVALID_MOVE, TurnOrder } from 'boardgame.io/core';
+import { arrayOfN, getShuffledArray } from '../../../utils/helpers';
 
 const isVictory = (cells) => {
   const positions = [
@@ -20,12 +20,13 @@ const isDraw = (cells) => cells.filter(c => !c).length === 0;
 
 export const TicTacToe = {
   name: 'tic-tac-toe',
-  minPlayers: 1,
+  minPlayers: 2,
   maxPlayers: 2,
   ai: {
-    enumerate: (G, ctx) => arrayOfN(9)
-      .filter(i => !G.cells[i])
-      .map(i => ({ move: 'clickCell', args: [i] })),
+    enumerate: (G, ctx) =>
+      arrayOfN(9)
+        .filter((i) => !G.cells[i])
+        .map((i) => ({ move: 'clickCell', args: [i] })),
   },
   endIf: (G, ctx) => {
     if (isVictory(G.cells)) {
@@ -35,6 +36,7 @@ export const TicTacToe = {
       return { draw: true };
     }
   },
+  playerView: (G, ctx, playerID) => G,
   setup: () => ({ cells: Array(9).fill(null) }),
   moves: {
     clickCell: (G, ctx, id) => {
@@ -46,6 +48,8 @@ export const TicTacToe = {
   },
   turn: {
     moveLimit: 1,
+    onBegin: (G, ctx) => G,
+    order: TurnOrder.CUSTOM(getShuffledArray(['0', '1'])),
   },
 };
 

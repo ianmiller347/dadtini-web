@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Client, Lobby } from 'boardgame.io/react';
-import { SocketIO } from 'boardgame.io/multiplayer';
+import { Local } from 'boardgame.io/multiplayer';
+import { RandomBot } from 'boardgame.io/ai';
 import { TicTacToe } from './TicTacToe';
 import { TicTacToeBoard } from './TicTacToeBoard';
 import AirMonarch from '../../../svg/shoe/AirMonarch';
@@ -22,10 +23,8 @@ export const contenders = {
 
 const MULTI = 'MULTIPLAYER';
 const SINGLE = 'SINGLEPLAYER';
-
-// const API_HOST = `http://${window.location.hostname}:8000`;
-const API_HOST = `http://${window.location.hostname}`;
-const GAMES = `${API_HOST}/games/tic-tac-toe`;
+const API_HOST = `http://${window.location.hostname}${process.env.NODE_ENV === 'development' ? ':8080' : ''}`;
+// const GAMES = `${API_HOST}/games/tic-tac-toe`;
 
 // the singleplayer client
 const TicTacToeClient = Client({
@@ -34,12 +33,13 @@ const TicTacToeClient = Client({
   board: TicTacToeBoard,
   debug: false,
   // multiplayer: SocketIO({ server: API_HOST }),
+  multiplayer: Local({ bots: { 1: RandomBot } }),
 });
 
 export const TicTacToeGame = () => {
   const [playerId, setPlayerId] = useState(null);
   // const [gameIsJoined, joinGame] = useState(false);
-  const [gameId, setGameId] = useState('default');
+  // const [gameId, setGameId] = useState('default');
   const [playerMode, setPlayerMode] = useState(null);
 
   if (!playerMode) {
@@ -61,7 +61,8 @@ export const TicTacToeGame = () => {
         <Lobby 
           gameServer={API_HOST}
           lobbyServer={API_HOST}
-          gameComponents={[{ game: TicTacToe, board: TicTacToeBoard }]} />
+          gameComponents={[{ game: TicTacToe, board: TicTacToeBoard }]}
+        />
       </div>
     );
   }
