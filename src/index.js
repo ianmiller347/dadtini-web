@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import Pages from './Pages';
 
-ReactDOM.render(<Pages />, document.getElementById('dads-root-chakra'));
+const root = createRoot(document.getElementById('dads-root-chakra'));
+root.render(<Pages />);

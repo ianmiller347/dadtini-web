@@ -8,16 +8,25 @@ const XorO = (num) => {
     return null;
   }
   return contenders[num].display;
-}
+};
 
 const Cell = ({ row, col, onClick, G }) => {
+  console.log('row, col, onClick, G', row, col, onClick, G);
   const id = 3 * row + col;
+  if (G.cells[id]) {
+    return (
+      <td className="board-cell" key={id}>
+        {XorO(G.cells[id])}
+      </td>
+    );
+  }
   return (
-    <td 
-      className="board-cell"
+    <td
+      className="board-cell board-cell--empty"
       key={id}
-      onClick={() => onClick(id)}>
-      {XorO(G.cells[id])}
+      onClick={() => onClick(id)}
+    >
+      {' '}
     </td>
   );
 };
@@ -30,14 +39,17 @@ const clickCell = (id, cb, isActive, G) => {
     return false;
   }
   cb(id);
-}
+};
 
 export const TicTacToeBoard = ({ G, ctx, moves, isActive, reset }) => {
+  console.log('reset', reset);
   let winner = '';
   if (ctx.gameover) {
     winner =
       ctx.gameover.winner !== undefined ? (
-        <div className="winner">Winner: {contenders[ctx.gameover.winner].title}</div>
+        <div className="winner">
+          Winner: {contenders[ctx.gameover.winner].title}
+        </div>
       ) : (
         <div className="winner">Draw!</div>
       );
@@ -50,7 +62,7 @@ export const TicTacToeBoard = ({ G, ctx, moves, isActive, reset }) => {
           It's your turn, {contenders[ctx.currentPlayer].title}
         </div>
       )}
-      {ctx.gameover && <button onClick={() => reset()}>Reset</button>}
+      {ctx.gameover && <button onClick={reset}>Reset</button>}
       <table className="tic-tac-toe-table">
         <tbody>
           {arrayOfN(3).map((i) => (
@@ -71,7 +83,7 @@ export const TicTacToeBoard = ({ G, ctx, moves, isActive, reset }) => {
       {winner}
     </div>
   );
-}
+};
 
 TicTacToeBoard.propTypes = {
   G: PropTypes.any.isRequired,
