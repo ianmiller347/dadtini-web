@@ -15,9 +15,10 @@ const router = new Router();
 const server = Server({
   games: [TicTacToe],
   db: new FlatFile({
-    dir: '/storage/boardgameio',
+    dir: 'storage',
     logging: false,
   }),
+  origins: ['https://dadtini.com'],
 });
 
 // router.get('/api/games', (ctx, next) => {

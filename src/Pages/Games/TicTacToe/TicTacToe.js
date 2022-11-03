@@ -25,7 +25,7 @@ const isVictory = (cells) => {
 };
 
 // Return true if all `cells` are occupied.
-const isDraw = (cells) => cells?.filter((c) => !c).length === 0;
+const isDraw = (cells) => cells.filter((c) => !c).length === 0;
 
 export const TicTacToe = {
   name: 'tic-tac-toe',
@@ -34,7 +34,7 @@ export const TicTacToe = {
   ai: {
     enumerate: (G, ctx) =>
       arrayOfN(9)
-        .filter((i) => !G?.cells[i])
+        .filter((i) => !G.cells[i])
         .map((i) => ({ move: 'clickCell', args: [i] })),
   },
   endIf: ({ G, ctx }) => {
