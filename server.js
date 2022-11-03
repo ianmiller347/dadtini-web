@@ -12,10 +12,10 @@ const PORT = process.env.PORT || 8080;
 // };
 const app = new Koa();
 const router = new Router();
-const server = Server({ 
+const server = Server({
   games: [TicTacToe],
   db: new FlatFile({
-    dir: 'storage',
+    dir: '/storage/boardgameio',
     logging: false,
   }),
 });
@@ -25,21 +25,19 @@ const server = Server({
 // });
 
 // router.get('/api/games/create/:id'), (ctx, next) => {
-  
+
 // }
 
 const frontEndAppBuildPath = path.resolve(__dirname, './build');
-server.app
-  .use(serve(frontEndAppBuildPath))
-  // .use(router.routes());
+server.app.use(serve(frontEndAppBuildPath));
+// .use(router.routes());
 
 server.run(PORT, () => {
   server.app.use(
-    async (ctx, next) => await serve(frontEndAppBuildPath)(
-      Object.assign(ctx, { path: 'index.html' }),
-      next
-    )
+    async (ctx, next) =>
+      await serve(frontEndAppBuildPath)(
+        Object.assign(ctx, { path: 'index.html' }),
+        next
+      )
   );
 });
-
-
