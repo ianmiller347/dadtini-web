@@ -11,7 +11,6 @@ const XorO = (num) => {
 };
 
 const Cell = ({ row, col, onClick, G }) => {
-  console.log('row, col, onClick, G', row, col, onClick, G);
   const id = 3 * row + col;
   if (G.cells[id]) {
     return (
@@ -42,7 +41,6 @@ const clickCell = (id, cb, isActive, G) => {
 };
 
 export const TicTacToeBoard = ({ G, ctx, moves, isActive, reset }) => {
-  console.log('reset', reset);
   let winner = '';
   if (ctx.gameover) {
     winner =
