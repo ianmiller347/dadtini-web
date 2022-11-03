@@ -26,7 +26,7 @@ const SINGLE = 'SINGLEPLAYER';
 const API_HOST = `http://${window.location.hostname}${process.env.NODE_ENV === 'development' ? ':8080' : ''}`;
 // const GAMES = `${API_HOST}/games/tic-tac-toe`;
 
-// the singleplayer client
+// the singleplayer client vs. the bot
 const TicTacToeClient = Client({
   game: TicTacToe,
   numPlayers: 2,

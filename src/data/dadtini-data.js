@@ -2,7 +2,8 @@ export const dadDrinks = [
   {
     name: 'Manhattan',
     image: 'https://i.ibb.co/k9vnnqX/manhattan-edited.jpg',
-    imageTitle: 'Original image by Graeme Maclean from Glasgow, UK - manhattan, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=45273416',
+    imageTitle:
+      'Original image by Graeme Maclean from Glasgow, UK - manhattan, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=45273416',
     description: `A classic drink for dads.`,
   },
   {
@@ -38,18 +39,22 @@ export const dadDrinks = [
   {
     name: 'Martini',
     image: 'https://i.ibb.co/PzHFNkZ/martini-edited.png',
-    imageTitle: 'original photo: John Phelan / CC BY-SA (https://creativecommons.org/licenses/by-sa/3.0)',
-    description: 'Shaken. Not stirred.🍸 Dads who have watched James Bond before probably.',
+    imageTitle:
+      'original photo: John Phelan / CC BY-SA (https://creativecommons.org/licenses/by-sa/3.0)',
+    description:
+      'Shaken. Not stirred.🍸 Dads who have watched James Bond before probably.',
   },
   {
     name: 'Sazerac',
     image: 'https://i.ibb.co/2shhCZ5/sazerac.jpg',
     imageTitle: '',
-    description: 'Both dads and grand dads alike will tip their hats to this wonderful dadtini.',
+    description:
+      'Both dads and grand dads alike will tip their hats to this wonderful dadtini.',
   },
   {
     name: `Dark 'n' Stormy`,
-    image: 'https://i.ibb.co/SvDcmGD/darkandstormy-cefb02d2e27f2c4bd124e641c86b545f-today-inline-large.jpg',
+    image:
+      'https://i.ibb.co/SvDcmGD/darkandstormy-cefb02d2e27f2c4bd124e641c86b545f-today-inline-large.jpg',
     imageTitle: '',
     description: `Try seeing if this one doesn't come up during a convo of dads talking about boats.`,
   },
